@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "name": "Cà phê Buôn Ma Thuột",
+    "category": "Cà phê",
+    "origin": "Đắk Lắk",
+    "description": "Cà phê đặc sản nổi tiếng của vùng Tây Nguyên."
+  },
+  {
+    "id": 2,
+    "name": "Mật ong rừng Tây Nguyên",
+    "category": "Mật ong",
+    "origin": "Đắk Nông",
+    "description": "Mật ong được khai thác từ nguồn hoa tự nhiên của rừng Tây Nguyên."
+  },
+  {
+    "id": 3,
+    "name": "Hạt điều Đắk Lắk",
+    "category": "Hạt",
+    "origin": "Đắk Lắk",
+    "description": "Hạt điều có vị béo và thơm đặc trưng."
+  },
+  {
+    "id": 4,
+    "name": "Hồ tiêu Gia Lai",
+    "category": "Gia vị",
+    "origin": "Gia Lai",
+    "description": "Hồ tiêu đặc sản với hương thơm và vị cay đặc trưng."
+  },
+  {
+    "id": 5,
+    "name": "Cacao Tây Nguyên",
+    "category": "Cacao",
+    "origin": "Đắk Nông",
+    "description": "Sản phẩm cacao được trồng tại vùng đất Tây Nguyên."
+  },
+  {
+    "id": 6,
+    "name": "Trà atiso",
+    "category": "Trà",
+    "origin": "Lâm Đồng",
+    "description": "Trà atiso có hương vị thanh nhẹ và được sử dụng phổ biến."
+  },
+  {
+    "id": 7,
+    "name": "Măng khô Tây Nguyên",
+    "category": "Thực phẩm khô",
+    "origin": "Kon Tum",
+    "description": "Măng được sơ chế và phơi khô theo phương pháp truyền thống."
+  },
+  {
+    "id": 8,
+    "name": "Bơ Đắk Lắk",
+    "category": "Trái cây",
+    "origin": "Đắk Lắk",
+    "description": "Bơ Tây Nguyên có độ béo cao và hương vị thơm ngon."
+  },
+  {
+    "id": 9,
+    "name": "Sầu riêng Đắk Lắk",
+    "category": "Trái cây",
+    "origin": "Đắk Lắk",
+    "description": "Sầu riêng có cơm vàng, vị béo và mùi thơm đặc trưng."
+  },
+  {
+    "id": 10,
+    "name": "Rượu cần Tây Nguyên",
+    "category": "Đồ uống truyền thống",
+    "origin": "Kon Tum",
+    "description": "Rượu cần là thức uống truyền thống gắn liền với văn hóa Tây Nguyên."
+  }
+]
