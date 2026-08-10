@@ -1,7 +1,7 @@
 # Project Plan - Website "Đặc Sản Tây Nguyên"
-## 1. Mục tiêu chương 1
+## 1. Mục tiêu dự án
 
-Chương này tụi mình chỉ làm phần khung sườn của website thôi, chưa cần hoàn thiện giao diện đẹp hết mức. Cái quan trọng là:
+dự án này tụi mình chỉ làm phần khung sườn của website thôi, chưa cần hoàn thiện giao diện đẹp hết mức. Cái quan trọng là:
 
 - Kiến trúc thư mục/file rõ ràng
 - Code có tổ chức, dễ đọc
@@ -124,11 +124,11 @@ Mỗi thành viên tự đảm bảo có: ít nhất 1 branch, ít nhất 2 comm
 
 | Ngày | Việc cần xong |
 |---|---|
-| 04-05/08 | Họp nhóm chốt phân công, viết requirements.md, tạo repo |
-| 05-06/08 | Mỗi người làm phần được giao trên branch riêng, chuẩn bị products.json |
-| 06/08 | Tạo Pull Request, review chéo, sửa lỗi |
-| 07/08 (sáng) | Merge, kiểm tra lại toàn bộ trang, hoàn thiện README |
-| 07/08 (chiều) | Chuẩn bị slide, tập trình bày |
+| 06/08 | Họp nhóm chốt phân công, viết requirements.md, tạo repo |
+| 07/08 | Mỗi người làm phần được giao trên branch riêng, chuẩn bị products.json |
+| 09/08 | Tạo Pull Request, review chéo, sửa lỗi |
+| 10/08 (sáng) | Merge, kiểm tra lại toàn bộ trang, hoàn thiện README |
+| 11/08 (tối) | nộp bài |
 
 ## 7. Rủi ro / khó khăn dự kiến
 
