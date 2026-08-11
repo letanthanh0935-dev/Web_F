@@ -1,0 +1,90 @@
+[
+  {
+    "id": 1,
+    "name": "Sầu riêng Ri6 Đắk Lắk",
+    "category": "Trái cây",
+    "price": 250000,
+    "unit": "kg",
+    "image": "https://images.unsplash.com/photo-1559181567-c3190ca9959b?auto=format&fit=crop&w=800&q=80",
+    "description": "Sầu riêng Ri6 chất lượng cao, múi dày, hương thơm đậm đà và vị béo ngậy đặc trưng.",
+    "origin": "Đắk Lắk",
+    "badge": "OCOP"
+  },
+  {
+    "id": 2,
+    "name": "Cà phê Robusta Buôn Ma Thuột",
+    "category": "Café",
+    "price": 180000,
+    "unit": "kg",
+    "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=800&q=80",
+    "description": "Hạt cà phê Robusta đắng nhẹ, thơm nồng, phù hợp cho nhiều phong cách pha chế.",
+    "origin": "Đắk Lắk",
+    "badge": "VietGAP"
+  },
+  {
+    "id": 3,
+    "name": "Mật ong hoa cà phê",
+    "category": "Mật ong",
+    "price": 320000,
+    "unit": "chai",
+    "image": "https://images.unsplash.com/photo-1587049352851-8d4e891d4f4a?auto=format&fit=crop&w=800&q=80",
+    "description": "Mật ong nguyên chất từ hoa cà phê, vị ngọt dịu, thơm tự nhiên và giàu dinh dưỡng.",
+    "origin": "Tây Nguyên",
+    "badge": "Tự nhiên"
+  },
+  {
+    "id": 4,
+    "name": "Mắc ca Tây Nguyên",
+    "category": "Trái cây",
+    "price": 160000,
+    "unit": "kg",
+    "image": "https://images.unsplash.com/photo-1502741338009-cac2772e18bc?auto=format&fit=crop&w=800&q=80",
+    "description": "Mắc ca chín mọng, ngọt thanh, nhiều vitamin và phù hợp làm quà biếu.",
+    "origin": "Gia Lai",
+    "badge": "OCOP"
+  },
+  {
+    "id": 5,
+    "name": "Hạt điều rang muối",
+    "category": "Đặc sản",
+    "price": 220000,
+    "unit": "hộp",
+    "image": "https://images.unsplash.com/photo-1514000337598-bcaab7f4f465?auto=format&fit=crop&w=800&q=80",
+    "description": "Hạt điều rang muối giòn ngon, tiện lợi dùng làm snack hoặc quà tặng.",
+    "origin": "Đắk Nông",
+    "badge": "Chất lượng"
+  },
+  {
+    "id": 6,
+    "name": "Bơ sáp Tây Nguyên",
+    "category": "Trái cây",
+    "price": 140000,
+    "unit": "kg",
+    "image": "https://images.unsplash.com/photo-1577036421869-7c8d0e7c4f3b?auto=format&fit=crop&w=800&q=80",
+    "description": "Bơ sáp mềm, thơm, giàu dưỡng chất và rất được ưa chuộng trong thực phẩm sạch.",
+    "origin": "Kon Tum",
+    "badge": "VietGAP"
+  },
+  {
+    "id": 7,
+    "name": "Cà phê Arabica Premium",
+    "category": "Café",
+    "price": 290000,
+    "unit": "kg",
+    "image": "https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=800&q=80",
+    "description": "Cà phê Arabica hương thơm nhẹ, vị thanh và phù hợp cho người yêu cà phê cao cấp.",
+    "origin": "Lâm Đồng",
+    "badge": "Premium"
+  },
+  {
+    "id": 8,
+    "name": "Nho khô Tây Nguyên",
+    "category": "Khô",
+    "price": 170000,
+    "unit": "hộp",
+    "image": "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=800&q=80",
+    "description": "Nho khô tự nhiên, ngọt đậm và thơm, thích hợp làm quà biếu hoặc snack dinh dưỡng.",
+    "origin": "Đắk Lắk",
+    "badge": "Tự nhiên"
+  }
+]
