@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đặc Sản Tây Nguyên - Sản Phẩm Chất Lượng Cao</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="container">
+      <div class="logo">🌾 Đặc Sản Tây Nguyên</div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Trang Chủ</a></li>
+          <li><a href="gioi-thieu.html">Giới Thiệu</a></li>
+          <li><a href="san-pham.html">Sản Phẩm</a></li>
+          <li><a href="nguon-goc.html">Nguồn Gốc</a></li>
+          <li><a href="lien-he.html">Liên Hệ</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- BANNER -->
+  <div class="banner">
+    <h1>Đặc Sản Tây Nguyên</h1>
+    <p>Những sản phẩm đích thực từ vùng đất Tây Nguyên - Chất Lượng & Hương Vị</p>
+    <a href="san-pham.html" class="btn" style="margin-top: 20px;">Khám Phá Sản Phẩm</a>
+  </div>
+
+  <!-- SỢI SẢN PHẨM NỔI BẬT -->
+  <main>
+    <div class="container">
+      <section class="section">
+        <h2>Sản Phẩm Nổi Bật</h2>
+        <div id="featured-products" class="product-grid"></div>
+      </section>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div>
+        <h4>Về Chúng Tôi</h4>
+        <p>Website giới thiệu đặc sản Tây Nguyên - vùng đất có nền nông nghiệp phong phú.</p>
+      </div>
+      <div>
+        <h4>Thông Tin Liên Hệ</h4>
+        <p>Email: contact@dacsantaynguyen.com</p>
+        <p>Điện thoại: 0123-456-789</p>
+      </div>
+      <div>
+        <h4>Thành Viên Nhóm</h4>
+        <p>Thành viên 1 (Quản lý)</p>
+        <p>Thành viên 2 (Giao diện)</p>
+        <p>Thành viên 3 (Chức năng)</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Hàm hiển thị 6 sản phẩm nổi bật
+    async function loadFeaturedProducts() {
+      const container = document.getElementById('featured-products');
+
+      try {
+        // Fetch dữ liệu sản phẩm
+        const response = await fetch('../data/products.json');
+        if (!response.ok) {
+          throw new Error('Không thể tải dữ liệu sản phẩm');
+        }
+
+        const products = await response.json();
+        
+        // Lấy 6 sản phẩm đầu tiên
+        const featured = products.slice(0, 6);
+
+        let html = '';
+        featured.forEach(product => {
+          const formattedPrice = new Intl.NumberFormat('vi-VN', {
+            style: 'currency',
+            currency: 'VND'
+          }).format(product.price);
+
+          html += `
+            <a href="chi-tiet-san-pham.html?id=${product.id}" style="text-decoration: none; color: inherit;">
+              <div class="product-card">
+                <img src="../${product.image}" alt="${product.imageAlt}">
+                <div class="product-info">
+                  <div class="product-name">${product.name}</div>
+                  <div class="product-price">${formattedPrice}</div>
+                  <span class="product-category">${product.category}</span>
+                </div>
+              </div>
+            </a>
+          `;
+        });
+
+        container.innerHTML = html;
+
+      } catch (error) {
+        console.error('Lỗi:', error);
+        container.innerHTML = `
+          <div class="error-message" style="grid-column: 1/-1;">
+            <p>Không thể tải dữ liệu sản phẩm, vui lòng thử lại</p>
+          </div>
+        `;
+      }
+    }
+
+    // Gọi hàm khi trang load
+    document.addEventListener('DOMContentLoaded', loadFeaturedProducts);
+  </script>
+</body>
+</html>
