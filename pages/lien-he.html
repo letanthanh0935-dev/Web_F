@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Liên Hệ - Đặc Sản Tây Nguyên</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="container">
+      <div class="logo">🌾 Đặc Sản Tây Nguyên</div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Trang Chủ</a></li>
+          <li><a href="gioi-thieu.html">Giới Thiệu</a></li>
+          <li><a href="san-pham.html">Sản Phẩm</a></li>
+          <li><a href="nguon-goc.html">Nguồn Gốc</a></li>
+          <li><a href="lien-he.html">Liên Hệ</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <div class="banner">
+      <h1>Liên Hệ Với Chúng Tôi</h1>
+      <p>Hãy để lại lời nhắn, chúng tôi sẽ phản hồi sớm nhất</p>
+    </div>
+
+    <div class="container" style="padding: 60px 20px;">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; max-width: 1000px; margin: 0 auto;">
+        <!-- FORM LIÊN HỆ -->
+        <div>
+          <h2 style="color: var(--primary-color); margin-bottom: 30px;">Gửi Thông Tin Liên Hệ</h2>
+          <form id="contact-form">
+            <div class="form-group">
+              <label for="fullname">Họ Tên *</label>
+              <input type="text" id="fullname" name="fullname" required>
+              <span class="form-error" id="error-fullname"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email" required>
+              <span class="form-error" id="error-email"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="content">Nội Dung *</label>
+              <textarea id="content" name="content" required></textarea>
+              <span class="form-error" id="error-content"></span>
+            </div>
+
+            <button type="submit" class="btn">Gửi Thông Tin</button>
+            <div id="message"></div>
+          </form>
+        </div>
+
+        <!-- THÔNG TIN LIÊN HỆ -->
+        <div>
+          <h2 style="color: var(--primary-color); margin-bottom: 30px;">Thông Tin Liên Hệ</h2>
+          
+          <div style="background: var(--light-bg); padding: 25px; border-radius: 8px; margin-bottom: 20px;">
+            <h4 style="color: var(--primary-color); margin-bottom: 15px;">📍 Địa Chỉ</h4>
+            <p>Khu vực Tây Nguyên, Việt Nam</p>
+          </div>
+
+          <div style="background: var(--light-bg); padding: 25px; border-radius: 8px; margin-bottom: 20px;">
+            <h4 style="color: var(--primary-color); margin-bottom: 15px;">📧 Email</h4>
+            <p><a href="mailto:contact@dacsantaynguyen.com" style="color: var(--primary-color); text-decoration: none;">contact@dacsantaynguyen.com</a></p>
+            <p><a href="mailto:info@dacsantaynguyen.com" style="color: var(--primary-color); text-decoration: none;">info@dacsantaynguyen.com</a></p>
+          </div>
+
+          <div style="background: var(--light-bg); padding: 25px; border-radius: 8px; margin-bottom: 20px;">
+            <h4 style="color: var(--primary-color); margin-bottom: 15px;">📞 Điện Thoại</h4>
+            <p><a href="tel:0123456789" style="color: var(--primary-color); text-decoration: none;">0123-456-789</a></p>
+            <p><a href="tel:0987654321" style="color: var(--primary-color); text-decoration: none;">0987-654-321</a></p>
+          </div>
+
+          <div style="background: var(--light-bg); padding: 25px; border-radius: 8px;">
+            <h4 style="color: var(--primary-color); margin-bottom: 15px;">💼 Giờ Làm Việc</h4>
+            <p>Thứ 2 - Thứ 6: 9:00 - 18:00</p>
+            <p>Thứ 7: 9:00 - 12:00</p>
+            <p>Chủ Nhật: Nghỉ</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- THÀNH VIÊN NHÓM -->
+      <div style="margin-top: 60px; padding-top: 60px; border-top: 2px solid var(--border-color);">
+        <h2 style="color: var(--primary-color); margin-bottom: 30px; text-align: center;">Thành Viên Nhóm</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; max-width: 800px; margin: 0 auto;">
+          <div style="background: var(--light-bg); padding: 20px; border-radius: 8px; text-align: center;">
+            <h4 style="color: var(--primary-color); margin-bottom: 10px;">Thành Viên 1</h4>
+            <p style="font-size: 14px; color: #666;">Quản lý dự án<br>Backend dữ liệu</p>
+          </div>
+          <div style="background: var(--light-bg); padding: 20px; border-radius: 8px; text-align: center;">
+            <h4 style="color: var(--primary-color); margin-bottom: 10px;">Thành Viên 2</h4>
+            <p style="font-size: 14px; color: #666;">Frontend - Giao diện<br>Trang chủ, Sản phẩm</p>
+          </div>
+          <div style="background: var(--light-bg); padding: 20px; border-radius: 8px; text-align: center;">
+            <h4 style="color: var(--primary-color); margin-bottom: 10px;">Thành Viên 3</h4>
+            <p style="font-size: 14px; color: #666;">Frontend - Chức năng<br>Chi tiết, Nguồn gốc, Liên hệ</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div>
+        <h4>Về Chúng Tôi</h4>
+        <p>Website giới thiệu đặc sản Tây Nguyên - vùng đất có nền nông nghiệp phong phú.</p>
+      </div>
+      <div>
+        <h4>Thông Tin Liên Hệ</h4>
+        <p>Email: contact@dacsantaynguyen.com</p>
+        <p>Điện thoại: 0123-456-789</p>
+      </div>
+      <div>
+        <h4>Thành Viên Nhóm</h4>
+        <p>Thành viên 1 (Quản lý)</p>
+        <p>Thành viên 2 (Giao diện)</p>
+        <p>Thành viên 3 (Chức năng)</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const contactForm = document.getElementById('contact-form');
+    const messageContainer = document.getElementById('message');
+
+    // Hàm xóa lỗi
+    function clearErrors() {
+      const errorSpans = document.querySelectorAll('.form-error');
+      errorSpans.forEach(span => span.textContent = '');
+    }
+
+    // Hàm kiểm tra định dạng email
+    function validateEmail(email) {
+      return email.includes('@');
+    }
+
+    // Hàm validate form
+    function validateForm() {
+      clearErrors();
+      let isValid = true;
+
+      const fullname = document.getElementById('fullname').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const content = document.getElementById('content').value.trim();
+
+      // Kiểm tra họ tên
+      if (!fullname) {
+        document.getElementById('error-fullname').textContent = 'Vui lòng nhập họ tên';
+        isValid = false;
+      }
+
+      // Kiểm tra email
+      if (!email) {
+        document.getElementById('error-email').textContent = 'Vui lòng nhập email';
+        isValid = false;
+      } else if (!validateEmail(email)) {
+        document.getElementById('error-email').textContent = 'Email không hợp lệ (phải chứa ký tự @)';
+        isValid = false;
+      }
+
+      // Kiểm tra nội dung
+      if (!content) {
+        document.getElementById('error-content').textContent = 'Vui lòng nhập nội dung';
+        isValid = false;
+      }
+
+      return isValid;
+    }
+
+    // Xử lý submit form
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      // Validate form
+      if (!validateForm()) {
+        return;
+      }
+
+      // Lấy dữ liệu form
+      const fullname = document.getElementById('fullname').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const content = document.getElementById('content').value.trim();
+
+      // Tại giai đoạn 1, chỉ hiển thị thông báo thành công (không gửi thật)
+      messageContainer.innerHTML = `
+        <div class="success-message" style="margin-top: 20px;">
+          <p><strong>✓ Gửi thông tin thành công!</strong></p>
+          <p style="margin-top: 10px; font-size: 14px;">Cảm ơn <strong>${fullname}</strong>, chúng tôi sẽ liên lạc với bạn sớm.</p>
+        </div>
+      `;
+
+      // Reset form
+      contactForm.reset();
+
+      // Xóa thông báo sau 5 giây
+      setTimeout(() => {
+        messageContainer.innerHTML = '';
+      }, 5000);
+    });
+  </script>
+</body>
+</html>
