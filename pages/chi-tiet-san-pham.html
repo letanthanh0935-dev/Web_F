@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chi Tiết Sản Phẩm  -  Đặc Sản Tây Nguyên</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="container">
+      <div class="logo">🌾 Đặc Sản Tây Nguyên</div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Trang Chủ</a></li>
+          <li><a href="gioi-thieu.html">Giới Thiệu</a></li>
+          <li><a href="san-pham.html">Sản Phẩm</a></li>
+          <li><a href="nguon-goc.html">Nguồn Gốc</a></li>
+          <li><a href="lien-he.html">Liên Hệ</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <div class="banner">
+      <h1> Chi Tiết Sản Phẩm </h1>
+      <p>Khám phá thông tin chi tiết về các sản phẩm đặc sản Tây Nguyên</p>
+    </div>
+
+    <div class="container">
+      <!-- Hiển thị trạng thái loading -->
+      <div id="loading" class="loading" style="display: none;">
+        <p>⏳ Đang tải dữ liệu sản phẩm...</p>
+      </div>
+
+      <!-- Hiển thị lỗi nếu có -->
+      <div id="error" class="error-message" style="display: none;"></div>
+
+      <!-- Chi tiết sản phẩm -->
+      <div id="product-detail-container"></div>
+
+      <!-- Sản phẩm liên quan -->
+      <div id="related-products-container" class="related-products" style="display: none;"></div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div>
+        <h4>Về Chúng Tôi</h4>
+        <p>Website giới thiệu đặc sản Tây Nguyên - vùng đất có nền nông nghiệp phong phú.</p>
+      </div>
+      <div>
+        <h4>Thông Tin Liên Hệ</h4>
+        <p>Email: contact@dacsantaynguyen.com</p>
+        <p>Điện thoại: 0123-456-789</p>
+      </div>
+      <div>
+        <h4>Thành Viên Nhóm</h4>
+        <p>Thành viên 1 (Quản lý)</p>
+        <p>Thành viên 2 (Giao diện)</p>
+        <p>Thành viên 3 (Chức năng)</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function getAssetImagePath(imageName) {
+      return `../assets/images/${imageName}`;
+    }
+
+    // Hàm lấy query parameter từ URL
+    function getQueryParameter(param) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(param);
+    }
+
+    // Hàm định dạng giá tiền
+    function formatPrice(price) {
+      return new Intl.NumberFormat('vi-VN', {
+        style: 'currency',
+        currency: 'VND'
+      }).format(price);
+    }
+
+    // Hàm tải và hiển thị chi tiết sản phẩm
+    async function loadProductDetail() {
+      const productId = getQueryParameter('id');
+      const loadingEl = document.getElementById('loading');
+      const errorEl = document.getElementById('error');
+      const containerEl = document.getElementById('product-detail-container');
+      const relatedContainerEl = document.getElementById('related-products-container');
+
+      // Kiểm tra xem có id trong URL không
+      if (!productId) {
+        errorEl.textContent = '❌ Không tìm thấy ID sản phẩm. Vui lòng quay lại trang sản phẩm.';
+        errorEl.style.display = 'block';
+        loadingEl.style.display = 'none';
+        return;
+      }
+
+      // Hiển thị loading
+      loadingEl.style.display = 'block';
+      containerEl.innerHTML = '';
+
+      try {
+        // Fetch dữ liệu sản phẩm
+        const response = await fetch('../data/products.json');
+        if (!response.ok) {
+          throw new Error('Không thể tải dữ liệu sản phẩm');
+        }
+
+        const products = await response.json();
+        const product = products.find(p => p.id == productId);
+
+        if (!product) {
+          throw new Error('Không tìm thấy sản phẩm với ID này');
+        }
+
+        // Hiển thị chi tiết sản phẩm
+        const detailHTML = `
+          <div class="product-detail">
+            <div class="product-image">
+              <img src="${getAssetImagePath(product.image)}" alt="${product.imageAlt || product.name}" loading="lazy">
+            </div>
+            <div class="product-info">
+              <h2>${product.name}</h2>
+              
+              <div>
+                ${product.badge ? `<span class="badge">${product.badge}</span>` : ''}
+              </div>
+
+              <div class="product-meta">
+                <div class="meta-item">
+                  <span class="meta-label">Danh Mục:</span>
+                  <span>${product.category}</span>
+                </div>
+                <div class="meta-item">
+                  <span class="meta-label">Nguồn Gốc:</span>
+                  <span>${product.origin}</span>
+                </div>
+                <div class="meta-item">
+                  <span class="meta-label">Đơn Vị:</span>
+                  <span>${product.unit}</span>
+                </div>
+              </div>
+
+              <div class="price-section">
+                <div class="price">${formatPrice(product.price)}</div>
+                <div class="unit">Giá trên 1 ${product.unit}</div>
+              </div>
+
+              <h3 style="color: #1e7f5f; margin-top: 30px;">Mô Tả Sản Phẩm</h3>
+              <p class="description">${product.description}</p>
+
+              <div class="action-buttons">
+                <a href="san-pham.html" class="btn btn-secondary">
+                  <i class="fas fa-arrow-left"></i>
+                  Quay Lại Danh Sách
+                </a>
+                <a href="lien-he.html" class="btn btn-primary">
+                  <i class="fas fa-envelope"></i>
+                  Liên Hệ Nhà Vườn
+                </a>
+              </div>
+            </div>
+          </div>
+        `;
+
+        containerEl.innerHTML = detailHTML;
+        loadingEl.style.display = 'none';
+        errorEl.style.display = 'none';
+
+        // Hiển thị sản phẩm liên quan (cùng danh mục)
+        displayRelatedProducts(products, product);
+
+      } catch (error) {
+        console.error('Lỗi:', error);
+        errorEl.textContent = `❌ ${error.message}`;
+        errorEl.style.display = 'block';
+        loadingEl.style.display = 'none';
+        containerEl.innerHTML = '';
+      }
+    }
+
+    // Hàm hiển thị sản phẩm liên quan
+    function displayRelatedProducts(products, currentProduct) {
+      const relatedContainerEl = document.getElementById('related-products-container');
+      
+      // Lọc sản phẩm cùng danh mục (trừ sản phẩm hiện tại)
+      const relatedProducts = products.filter(p => 
+        p.category === currentProduct.category && p.id != currentProduct.id
+      ).slice(0, 6); // Hiển thị tối đa 6 sản phẩm
+
+      if (relatedProducts.length === 0) {
+        relatedContainerEl.style.display = 'none';
+        return;
+      }
+
+      let html = '<h3>🎁 Sản Phẩm Liên Quan</h3><div class="product-grid">';
+
+      relatedProducts.forEach(product => {
+        html += `
+          <a href="chi-tiet-san-pham.html?id=${product.id}" class="product-card">
+            <img src="${getAssetImagePath(product.image)}" alt="${product.imageAlt || product.name}" class="product-card-image" loading="lazy">
+            <div class="product-card-content">
+              <div class="product-card-name">${product.name}</div>
+              <div class="product-card-category">${product.category}</div>
+              <div class="product-card-price">${formatPrice(product.price)}</div>
+            </div>
+          </a>
+        `;
+      });
+
+      html += '</div>';
+      relatedContainerEl.innerHTML = html;
+      relatedContainerEl.style.display = 'block';
+    }
+
+    // Hàm cập nhật số lượng giỏ hàng
+    function updateCartCount() {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+      const cartBadges = document.querySelectorAll('.cart-count, .cart-badge');
+      cartBadges.forEach(badge => {
+        badge.textContent = totalItems;
+      });
+    }
+
+    // Khi trang load xong, tải chi tiết sản phẩm
+    document.addEventListener('DOMContentLoaded', loadProductDetail);
+  </script>
+</body>
+</html>

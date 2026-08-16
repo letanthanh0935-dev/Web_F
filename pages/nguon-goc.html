@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nguồn Gốc Sản Phẩm  -  Đặc Sản Tây Nguyên</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="container">
+      <div class="logo">🌾 Đặc Sản Tây Nguyên</div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Trang Chủ</a></li>
+          <li><a href="gioi-thieu.html">Giới Thiệu</a></li>
+          <li><a href="san-pham.html">Sản Phẩm</a></li>
+          <li><a href="nguon-goc.html">Nguồn Gốc</a></li>
+          <li><a href="lien-he.html">Liên Hệ</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <div class="banner">
+      <h1>Nguồn Gốc Sản Phẩm Đặc Sản Tây Nguyên</h1>
+      <p>Tìm hiểu về các sản phẩm đặc sản từ các vùng của Tây Nguyên</p>
+    </div>
+
+    <div class="container section">
+      <!-- Loading -->
+      <div id="loading" class="loading" style="display: none;">
+        <p>⏳ Đang tải dữ liệu sản phẩm...</p>
+      </div>
+
+      <!-- Error Message -->
+      <div id="error" class="error-message" style="display: none;"></div>
+
+      <!-- Origin Content -->
+      <div id="origin-content"></div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div>
+        <h4>Về Chúng Tôi</h4>
+        <p>Website giới thiệu đặc sản Tây Nguyên - vùng đất có nền nông nghiệp phong phú.</p>
+      </div>
+      <div>
+        <h4>Thông Tin Liên Hệ</h4>
+        <p>Email: contact@dacsantaynguyen.com</p>
+        <p>Điện thoại: 0123-456-789</p>
+      </div>
+      <div>
+        <h4>Thành Viên Nhóm</h4>
+        <p>Thành viên 1 (Quản lý)</p>
+        <p>Thành viên 2 (Giao diện)</p>
+        <p>Thành viên 3 (Chức năng)</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Dữ liệu giới thiệu các vùng
+    const regionIntro = {
+      'Đắk Lắk': 'Đắk Lắk là trung tâm sản xuất cà phê lớn nhất của Việt Nam, nổi tiếng với những búp cà phê chất lượng cao. Ngoài cà phê, đây còn là nơi sản xuất nhiều nông sản khác như cacao, bơ, sầu riêng với chất lượng xuất khẩu.',
+      'Gia Lai': 'Gia Lai là tỉnh nông nghiệp có truyền thống sâu dài với nền nông nghiệp đa dạng. Đặc sản nổi bật của vùng là các loại gia vị như tiêu, với hương vị cay đặc trưng và chất lượng được công nhận quốc tế.',
+      'Đắk Nông': 'Đắk Nông là vùng đất mầu mỡ với khí hậu thuận lợi cho canh tác. Mật ong rừng, cacao, và các loại nông sản khác được sản xuất tự nhiên, giữ nguyên các dưỡng chất thiên nhiên.',
+      'Kon Tum': 'Kon Tum nằm ở vùng Tây Nguyên phía bắc, với rừng nguyên sinh phong phú. Đây là nơi sản xuất các sản phẩm truyền thống độc đáo như rượu cần, măng khô với phương pháp thủ công lâu đời.',
+      'Lâm Đồng': 'Lâm Đồng, vùng đất cao nguyên mát mẻ, nổi tiếng với các loại hoa màu và nông sản đặc sắc. Trà atiso được trồng phong phú ở đây, là thức uống được yêu thích vì tính chất thanh nhiệt, giải độc.'
+    };
+
+    // Hàm tải và hiển thị sản phẩm theo vùng
+    async function loadOriginProducts() {
+      const loadingEl = document.getElementById('loading');
+      const errorEl = document.getElementById('error');
+      const containerEl = document.getElementById('origin-content');
+
+      loadingEl.style.display = 'block';
+
+      try {
+        // Fetch dữ liệu sản phẩm
+        const response = await fetch('../data/products.json');
+        if (!response.ok) {
+          throw new Error('Không thể tải dữ liệu sản phẩm, vui lòng thử lại');
+        }
+
+        const products = await response.json();
+        
+        // Tổng hợp sản phẩm theo origin (vùng)
+        const productsByOrigin = {};
+        
+        products.forEach(product => {
+          if (!productsByOrigin[product.origin]) {
+            productsByOrigin[product.origin] = [];
+          }
+          productsByOrigin[product.origin].push(product);
+        });
+
+        // Thứ tự các vùng
+        const regions = ['Đắk Lắk', 'Gia Lai', 'Đắk Nông', 'Kon Tum', 'Lâm Đồng'];
+        
+        let html = '';
+
+        regions.forEach(region => {
+          if (productsByOrigin[region] && productsByOrigin[region].length > 0) {
+            html += `
+              <div class="region-section">
+                <h3>📍 ${region}</h3>
+                <p class="region-intro">${regionIntro[region]}</p>
+                <ul class="product-list">
+            `;
+
+            productsByOrigin[region].forEach(product => {
+              html += `
+                <li>
+                  <a href="chi-tiet-san-pham.html?id=${product.id}">${product.name}</a>
+                  <span>${product.category}</span>
+                </li>
+              `;
+            });
+
+            html += `
+                </ul>
+              </div>
+            `;
+          }
+        });
+
+        containerEl.innerHTML = html;
+        loadingEl.style.display = 'none';
+        errorEl.style.display = 'none';
+
+      } catch (error) {
+        console.error('Lỗi:', error);
+        errorEl.textContent = `❌ ${error.message}`;
+        errorEl.style.display = 'block';
+        loadingEl.style.display = 'none';
+        containerEl.innerHTML = '';
+      }
+    }
+
+    // Gọi hàm khi trang load
+    document.addEventListener('DOMContentLoaded', loadOriginProducts);
+  </script>
+</body>
+</html>
