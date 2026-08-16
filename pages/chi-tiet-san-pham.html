@@ -3,14 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD
   <title>Chi Tiết Sản Phẩm  -  Đặc Sản Tây Nguyên</title>
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-=======
-  <title>Chi Tiết Sản Phẩm - Đặc Sản Tây Nguyên</title>
-  <link rel="stylesheet" href="../css/style.css">
->>>>>>> c35192f7e4817ba556f4aef080dbc884fef4bf6f
 </head>
 <body>
   <!-- HEADER -->
@@ -31,7 +26,6 @@
 
   <!-- MAIN CONTENT -->
   <main>
-<<<<<<< HEAD
     <div class="banner">
       <h1> Chi Tiết Sản Phẩm </h1>
       <p>Khám phá thông tin chi tiết về các sản phẩm đặc sản Tây Nguyên</p>
@@ -51,11 +45,6 @@
 
       <!-- Sản phẩm liên quan -->
       <div id="related-products-container" class="related-products" style="display: none;"></div>
-=======
-    <div class="container">
-      <div id="product-detail"></div>
-      <div id="error-message"></div>
->>>>>>> c35192f7e4817ba556f4aef080dbc884fef4bf6f
     </div>
   </main>
 
@@ -81,7 +70,10 @@
   </footer>
 
   <script>
-<<<<<<< HEAD
+    function getAssetImagePath(imageName) {
+      return `../assets/images/${imageName}`;
+    }
+
     // Hàm lấy query parameter từ URL
     function getQueryParameter(param) {
       const urlParams = new URLSearchParams(window.location.search);
@@ -116,31 +108,10 @@
       loadingEl.style.display = 'block';
       containerEl.innerHTML = '';
 
-=======
-    // Hàm lấy tham số từ URL
-    function getUrlParam(paramName) {
-      const params = new URLSearchParams(window.location.search);
-      return params.get(paramName);
-    }
-
-    // Hàm hiển thị chi tiết sản phẩm
-    async function loadProductDetail() {
-      const productId = getUrlParam('id');
-      const detailContainer = document.getElementById('product-detail');
-      const errorContainer = document.getElementById('error-message');
-
-      // Kiểm tra nếu không có id
-      if (!productId) {
-        showError(errorContainer, 'Không tìm thấy sản phẩm');
-        return;
-      }
-
->>>>>>> c35192f7e4817ba556f4aef080dbc884fef4bf6f
       try {
         // Fetch dữ liệu sản phẩm
         const response = await fetch('../data/products.json');
         if (!response.ok) {
-<<<<<<< HEAD
           throw new Error('Không thể tải dữ liệu sản phẩm');
         }
 
@@ -155,7 +126,7 @@
         const detailHTML = `
           <div class="product-detail">
             <div class="product-image">
-              <img src="${product.image}" alt="${product.imageAlt || product.name}" loading="lazy">
+              <img src="${getAssetImagePath(product.image)}" alt="${product.imageAlt || product.name}" loading="lazy">
             </div>
             <div class="product-info">
               <h2>${product.name}</h2>
@@ -236,7 +207,7 @@
       relatedProducts.forEach(product => {
         html += `
           <a href="chi-tiet-san-pham.html?id=${product.id}" class="product-card">
-            <img src="${product.image}" alt="${product.imageAlt || product.name}" class="product-card-image" loading="lazy">
+            <img src="${getAssetImagePath(product.image)}" alt="${product.imageAlt || product.name}" class="product-card-image" loading="lazy">
             <div class="product-card-content">
               <div class="product-card-name">${product.name}</div>
               <div class="product-card-category">${product.category}</div>
@@ -262,98 +233,6 @@
     }
 
     // Khi trang load xong, tải chi tiết sản phẩm
-=======
-          throw new Error('Không thể tải dữ liệu sản phẩm, vui lòng thử lại');
-        }
-
-        const products = await response.json();
-        
-        // Tìm sản phẩm theo id
-        const product = products.find(p => p.id == productId);
-
-        if (!product) {
-          showError(errorContainer, 'Không tìm thấy sản phẩm');
-          return;
-        }
-
-        // Hiển thị chi tiết sản phẩm
-        displayProduct(product, detailContainer);
-
-      } catch (error) {
-        console.error('Lỗi:', error);
-        showError(errorContainer, error.message || 'Không thể tải dữ liệu sản phẩm, vui lòng thử lại');
-      }
-    }
-
-    // Hàm hiển thị sản phẩm
-    function displayProduct(product, container) {
-      const formattedPrice = new Intl.NumberFormat('vi-VN', {
-        style: 'currency',
-        currency: 'VND'
-      }).format(product.price);
-
-      const html = `
-        <div class="product-detail">
-          <div class="product-detail-grid">
-            <div>
-              <img src="../${product.image}" alt="${product.imageAlt}" class="product-detail-img">
-            </div>
-            <div class="product-detail-info">
-              <h1>${product.name}</h1>
-              
-              <div class="detail-meta">
-                <div class="detail-item">
-                  <span class="detail-label">Danh Mục:</span>
-                  <span class="detail-value">${product.category}</span>
-                </div>
-                
-                <div class="detail-item">
-                  <span class="detail-label">Nguồn Gốc:</span>
-                  <span class="detail-value">${product.origin}</span>
-                </div>
-                
-                <div class="detail-item">
-                  <span class="detail-label">Giá:</span>
-                  <span class="price-large">${formattedPrice}</span>
-                </div>
-                
-                <div class="detail-item">
-                  <span class="detail-label">Đơn Vị Tính:</span>
-                  <span class="detail-value">${product.unit}</span>
-                </div>
-              </div>
-
-              <div style="margin-top: 30px;">
-                <a href="san-pham.html" class="btn btn-secondary">← Quay Lại Danh Sách</a>
-              </div>
-            </div>
-          </div>
-
-          <div style="margin-top: 30px; padding-top: 30px; border-top: 1px solid var(--border-color);">
-            <h3 style="color: var(--primary-color); margin-bottom: 15px;">Mô Tả Chi Tiết</h3>
-            <p style="line-height: 1.8; color: var(--text-color);">${product.description}</p>
-          </div>
-        </div>
-      `;
-
-      container.innerHTML = html;
-    }
-
-    // Hàm hiển thị lỗi
-    function showError(container, message) {
-      const html = `
-        <div class="error-message">
-          <p>${message}</p>
-          <p style="margin-top: 15px;">
-            <a href="san-pham.html" class="btn btn-secondary">Về Danh Sách Sản Phẩm</a>
-          </p>
-        </div>
-      `;
-      container.innerHTML = html;
-    }
-
-    // Gọi hàm khi trang load
->>>>>>> c35192f7e4817ba556f4aef080dbc884fef4bf6f
     document.addEventListener('DOMContentLoaded', loadProductDetail);
   </script>
 </body>
