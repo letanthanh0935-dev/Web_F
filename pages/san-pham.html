@@ -5,14 +5,50 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Danh Sách Sản Phẩm - Đặc Sản Tây Nguyên</title>
   <link rel="stylesheet" href="../css/style.css">
+<<<<<<< HEAD
 </head>
 <body>
+=======
+  <style>
+    .filter-container {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+      align-items: center;
+    }
+
+    .filter-btn {
+      padding: 10px 20px;
+      border: 2px solid var(--primary-color);
+      background: var(--white);
+      color: var(--primary-color);
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: all 0.3s;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: var(--primary-color);
+      color: var(--white);
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+>>>>>>> c35192f7e4817ba556f4aef080dbc884fef4bf6f
   <header>
     <div class="container">
       <div class="logo">🌾 Đặc Sản Tây Nguyên</div>
       <nav>
         <ul>
+<<<<<<< HEAD
           <li><a href="../index.html">Trang Chủ</a></li>
+=======
+          <li><a href="index.html">Trang Chủ</a></li>
+>>>>>>> c35192f7e4817ba556f4aef080dbc884fef4bf6f
           <li><a href="gioi-thieu.html">Giới Thiệu</a></li>
           <li><a href="san-pham.html">Sản Phẩm</a></li>
           <li><a href="nguon-goc.html">Nguồn Gốc</a></li>
@@ -22,6 +58,7 @@
     </div>
   </header>
 
+<<<<<<< HEAD
   <main>
     <div class="banner">
       <h1>Danh sách sản phẩm đặc sản Tây Nguyên</h1>
@@ -35,11 +72,30 @@
         <div id="category-filters"></div>
       </div>
 
+=======
+  <!-- MAIN CONTENT -->
+  <main>
+    <div class="banner">
+      <h1>Danh Sách Sản Phẩm</h1>
+      <p>Khám phá các sản phẩm đặc sản chất lượng cao từ Tây Nguyên</p>
+    </div>
+
+    <div class="container section">
+      <!-- FILTER -->
+      <div class="filter-container">
+        <label style="font-weight: bold; color: var(--primary-color);">Lọc theo danh mục:</label>
+        <button class="filter-btn active" data-category="all">Tất Cả</button>
+        <div id="category-filters"></div>
+      </div>
+
+      <!-- PRODUCT LIST -->
+>>>>>>> c35192f7e4817ba556f4aef080dbc884fef4bf6f
       <div id="error-message"></div>
       <div id="product-list" class="product-grid"></div>
     </div>
   </main>
 
+<<<<<<< HEAD
   <footer>
     <div class="container grid">
       <div>
@@ -48,22 +104,41 @@
       </div>
       <div>
         <h4>Thông tin liên hệ</h4>
+=======
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div>
+        <h4>Về Chúng Tôi</h4>
+        <p>Website giới thiệu đặc sản Tây Nguyên - vùng đất có nền nông nghiệp phong phú.</p>
+      </div>
+      <div>
+        <h4>Thông Tin Liên Hệ</h4>
+>>>>>>> c35192f7e4817ba556f4aef080dbc884fef4bf6f
         <p>Email: contact@dacsantaynguyen.com</p>
         <p>Điện thoại: 0123-456-789</p>
       </div>
       <div>
+<<<<<<< HEAD
         <h4>Thành viên nhóm</h4>
         <ul>
           <li>Thành viên 1: Quản lý dự án</li>
           <li>Thành viên 2: Giao diện</li>
           <li>Thành viên 3: Chức năng</li>
         </ul>
+=======
+        <h4>Thành Viên Nhóm</h4>
+        <p>Thành viên 1 (Quản lý)</p>
+        <p>Thành viên 2 (Giao diện)</p>
+        <p>Thành viên 3 (Chức năng)</p>
+>>>>>>> c35192f7e4817ba556f4aef080dbc884fef4bf6f
       </div>
     </div>
   </footer>
 
   <script>
     let allProducts = [];
+<<<<<<< HEAD
     let currentCategory = 'all';
 
     function formatPrice(price) {
@@ -124,12 +199,25 @@
       const productList = document.getElementById('product-list');
 
       try {
+=======
+    let currentFilter = 'all';
+
+    // Hàm tải sản phẩm từ products.json
+    async function loadProducts() {
+      const listContainer = document.getElementById('product-list');
+      const errorContainer = document.getElementById('error-message');
+      const categoryFiltersContainer = document.getElementById('category-filters');
+
+      try {
+        // Fetch dữ liệu sản phẩm
+>>>>>>> c35192f7e4817ba556f4aef080dbc884fef4bf6f
         const response = await fetch('../data/products.json');
         if (!response.ok) {
           throw new Error('Không thể tải dữ liệu sản phẩm, vui lòng thử lại');
         }
 
         allProducts = await response.json();
+<<<<<<< HEAD
         const categories = [...new Set(allProducts.map(product => product.category))];
 
         buildCategoryFilters(categories);
@@ -142,6 +230,87 @@
       }
     }
 
+=======
+
+        // Tạo danh sách các category duy nhất
+        const categories = [...new Set(allProducts.map(p => p.category))];
+
+        // Hiển thị các nút lọc
+        let filterHtml = '';
+        categories.forEach(category => {
+          filterHtml += `<button class="filter-btn" data-category="${category}">${category}</button>`;
+        });
+        categoryFiltersContainer.innerHTML = filterHtml;
+
+        // Gán event listener cho các nút lọc
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+          btn.addEventListener('click', function() {
+            currentFilter = this.getAttribute('data-category');
+            
+            // Cập nhật trạng thái active
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+
+            // Hiển thị sản phẩm
+            displayProducts();
+          });
+        });
+
+        // Hiển thị sản phẩm lần đầu
+        displayProducts();
+
+      } catch (error) {
+        console.error('Lỗi:', error);
+        errorContainer.innerHTML = `
+          <div class="error-message">
+            <p>Không thể tải dữ liệu sản phẩm, vui lòng thử lại</p>
+          </div>
+        `;
+      }
+    }
+
+    // Hàm hiển thị sản phẩm
+    function displayProducts() {
+      const listContainer = document.getElementById('product-list');
+
+      // Lọc sản phẩm
+      let filtered = allProducts;
+      if (currentFilter !== 'all') {
+        filtered = allProducts.filter(p => p.category === currentFilter);
+      }
+
+      if (filtered.length === 0) {
+        listContainer.innerHTML = `<div class="error-message" style="grid-column: 1/-1;">Không có sản phẩm nào trong danh mục này</div>`;
+        return;
+      }
+
+      // Hiển thị sản phẩm
+      let html = '';
+      filtered.forEach(product => {
+        const formattedPrice = new Intl.NumberFormat('vi-VN', {
+          style: 'currency',
+          currency: 'VND'
+        }).format(product.price);
+
+        html += `
+          <a href="chi-tiet-san-pham.html?id=${product.id}" style="text-decoration: none; color: inherit;">
+            <div class="product-card">
+              <img src="../${product.image}" alt="${product.imageAlt}">
+              <div class="product-info">
+                <div class="product-name">${product.name}</div>
+                <div class="product-price">${formattedPrice}</div>
+                <span class="product-category">${product.category}</span>
+              </div>
+            </div>
+          </a>
+        `;
+      });
+
+      listContainer.innerHTML = html;
+    }
+
+    // Gọi hàm khi trang load
+>>>>>>> c35192f7e4817ba556f4aef080dbc884fef4bf6f
     document.addEventListener('DOMContentLoaded', loadProducts);
   </script>
 </body>

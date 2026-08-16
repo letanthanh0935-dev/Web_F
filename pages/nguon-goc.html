@@ -3,9 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
   <title>Nguồn Gốc Sản Phẩm  -  Đặc Sản Tây Nguyên</title>
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+=======
+  <title>Nguồn Gốc Sản Phẩm - Đặc Sản Tây Nguyên</title>
+  <link rel="stylesheet" href="../css/style.css">
+>>>>>>> c35192f7e4817ba556f4aef080dbc884fef4bf6f
 </head>
 <body>
   <!-- HEADER -->
@@ -32,6 +37,7 @@
     </div>
 
     <div class="container section">
+<<<<<<< HEAD
       <!-- Loading -->
       <div id="loading" class="loading" style="display: none;">
         <p>⏳ Đang tải dữ liệu sản phẩm...</p>
@@ -41,6 +47,8 @@
       <div id="error" class="error-message" style="display: none;"></div>
 
       <!-- Origin Content -->
+=======
+>>>>>>> c35192f7e4817ba556f4aef080dbc884fef4bf6f
       <div id="origin-content"></div>
     </div>
   </main>
@@ -70,7 +78,11 @@
     // Dữ liệu giới thiệu các vùng
     const regionIntro = {
       'Đắk Lắk': 'Đắk Lắk là trung tâm sản xuất cà phê lớn nhất của Việt Nam, nổi tiếng với những búp cà phê chất lượng cao. Ngoài cà phê, đây còn là nơi sản xuất nhiều nông sản khác như cacao, bơ, sầu riêng với chất lượng xuất khẩu.',
+<<<<<<< HEAD
       'Gia Lai': 'Gia Lai là tỉnh nông nghiệp có truyền thống sâu dài với nền nông nghiệp đa dạng. Đặc sản nổi bật của vùng là các loại gia vị như tiêu, với hương vị cay đặc trưng và chất lượng được công nhận quốc tế.',
+=======
+      'Gia Lai': 'Gia Lai là tỉnh nongông nghiệp có truyền thống sâu dài với nền nông nghiệp đa dạng. Đặc sản nổi bật của vùng là các loại gia vị như tiêu, với hương vị cay đặc trưng và chất lượng được công nhận quốc tế.',
+>>>>>>> c35192f7e4817ba556f4aef080dbc884fef4bf6f
       'Đắk Nông': 'Đắk Nông là vùng đất mầu mỡ với khí hậu thuận lợi cho canh tác. Mật ong rừng, cacao, và các loại nông sản khác được sản xuất tự nhiên, giữ nguyên các dưỡng chất thiên nhiên.',
       'Kon Tum': 'Kon Tum nằm ở vùng Tây Nguyên phía bắc, với rừng nguyên sinh phong phú. Đây là nơi sản xuất các sản phẩm truyền thống độc đáo như rượu cần, măng khô với phương pháp thủ công lâu đời.',
       'Lâm Đồng': 'Lâm Đồng, vùng đất cao nguyên mát mẻ, nổi tiếng với các loại hoa màu và nông sản đặc sắc. Trà atiso được trồng phong phú ở đây, là thức uống được yêu thích vì tính chất thanh nhiệt, giải độc.'
@@ -78,12 +90,17 @@
 
     // Hàm tải và hiển thị sản phẩm theo vùng
     async function loadOriginProducts() {
+<<<<<<< HEAD
       const loadingEl = document.getElementById('loading');
       const errorEl = document.getElementById('error');
       const containerEl = document.getElementById('origin-content');
 
       loadingEl.style.display = 'block';
 
+=======
+      const container = document.getElementById('origin-content');
+      
+>>>>>>> c35192f7e4817ba556f4aef080dbc884fef4bf6f
       try {
         // Fetch dữ liệu sản phẩm
         const response = await fetch('../data/products.json');
@@ -121,7 +138,11 @@
               html += `
                 <li>
                   <a href="chi-tiet-san-pham.html?id=${product.id}">${product.name}</a>
+<<<<<<< HEAD
                   <span>${product.category}</span>
+=======
+                  <span style="color: #999; font-size: 12px;"> (${product.category})</span>
+>>>>>>> c35192f7e4817ba556f4aef080dbc884fef4bf6f
                 </li>
               `;
             });
@@ -133,6 +154,7 @@
           }
         });
 
+<<<<<<< HEAD
         containerEl.innerHTML = html;
         loadingEl.style.display = 'none';
         errorEl.style.display = 'none';
@@ -143,6 +165,17 @@
         errorEl.style.display = 'block';
         loadingEl.style.display = 'none';
         containerEl.innerHTML = '';
+=======
+        container.innerHTML = html;
+
+      } catch (error) {
+        console.error('Lỗi:', error);
+        container.innerHTML = `
+          <div class="error-message">
+            <p>${error.message}</p>
+          </div>
+        `;
+>>>>>>> c35192f7e4817ba556f4aef080dbc884fef4bf6f
       }
     }
 
