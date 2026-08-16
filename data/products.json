@@ -8,7 +8,8 @@
     "image": "https://images.unsplash.com/photo-1559181567-c3190ca9959b?auto=format&fit=crop&w=800&q=80",
     "description": "Sầu riêng Ri6 chất lượng cao, múi dày, hương thơm đậm đà và vị béo ngậy đặc trưng.",
     "origin": "Đắk Lắk",
-    "badge": "OCOP"
+    "badge": "OCOP",
+    "imageAlt": "Sầu riêng Ri6 Đắk Lắk"
   },
   {
     "id": 2,
@@ -19,7 +20,8 @@
     "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=800&q=80",
     "description": "Hạt cà phê Robusta đắng nhẹ, thơm nồng, phù hợp cho nhiều phong cách pha chế.",
     "origin": "Đắk Lắk",
-    "badge": "VietGAP"
+    "badge": "VietGAP",
+    "imageAlt": "Cà phê Robusta Buôn Ma Thuột"
   },
   {
     "id": 3,
@@ -30,7 +32,8 @@
     "image": "https://images.unsplash.com/photo-1587049352851-8d4e891d4f4a?auto=format&fit=crop&w=800&q=80",
     "description": "Mật ong nguyên chất từ hoa cà phê, vị ngọt dịu, thơm tự nhiên và giàu dinh dưỡng.",
     "origin": "Tây Nguyên",
-    "badge": "Tự nhiên"
+    "badge": "Tự nhiên",
+    "imageAlt": "Mật ong hoa cà phê"
   },
   {
     "id": 4,
@@ -41,7 +44,8 @@
     "image": "https://images.unsplash.com/photo-1502741338009-cac2772e18bc?auto=format&fit=crop&w=800&q=80",
     "description": "Mắc ca chín mọng, ngọt thanh, nhiều vitamin và phù hợp làm quà biếu.",
     "origin": "Gia Lai",
-    "badge": "OCOP"
+    "badge": "OCOP",
+    "imageAlt": "Mắc ca Tây Nguyên"
   },
   {
     "id": 5,
@@ -52,7 +56,8 @@
     "image": "https://images.unsplash.com/photo-1514000337598-bcaab7f4f465?auto=format&fit=crop&w=800&q=80",
     "description": "Hạt điều rang muối giòn ngon, tiện lợi dùng làm snack hoặc quà tặng.",
     "origin": "Đắk Nông",
-    "badge": "Chất lượng"
+    "badge": "Chất lượng",
+    "imageAlt": "Hạt điều rang muối"
   },
   {
     "id": 6,
@@ -63,7 +68,8 @@
     "image": "https://images.unsplash.com/photo-1577036421869-7c8d0e7c4f3b?auto=format&fit=crop&w=800&q=80",
     "description": "Bơ sáp mềm, thơm, giàu dưỡng chất và rất được ưa chuộng trong thực phẩm sạch.",
     "origin": "Kon Tum",
-    "badge": "VietGAP"
+    "badge": "VietGAP",
+    "imageAlt": "Bơ sáp Tây Nguyên"
   },
   {
     "id": 7,
@@ -74,7 +80,8 @@
     "image": "https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=800&q=80",
     "description": "Cà phê Arabica hương thơm nhẹ, vị thanh và phù hợp cho người yêu cà phê cao cấp.",
     "origin": "Lâm Đồng",
-    "badge": "Premium"
+    "badge": "Premium",
+    "imageAlt": "Cà phê Arabica Premium"
   },
   {
     "id": 8,
@@ -85,6 +92,31 @@
     "image": "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=800&q=80",
     "description": "Nho khô tự nhiên, ngọt đậm và thơm, thích hợp làm quà biếu hoặc snack dinh dưỡng.",
     "origin": "Đắk Lắk",
-    "badge": "Tự nhiên"
+    "badge": "Tự nhiên",
+    "imageAlt": "Nho khô Tây Nguyên"
+  },
+  {
+    "id": 9,
+    "name": "Tiêu đen Gia Lai",
+    "category": "Gia vị",
+    "price": 200000,
+    "unit": "kg",
+    "image": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=800&q=80",
+    "description": "Tiêu đen Gia Lai cay nồng, thơm đặc trưng, phù hợp làm gia vị cho nhiều món ăn.",
+    "origin": "Gia Lai",
+    "badge": "OCOP",
+    "imageAlt": "Tiêu đen Gia Lai"
+  },
+  {
+    "id": 10,
+    "name": "Mật ong rừng Tây Nguyên",
+    "category": "Mật ong",
+    "price": 350000,
+    "unit": "chai",
+    "image": "https://images.unsplash.com/photo-1509679747988-bfef80f9fd2b?auto=format&fit=crop&w=800&q=80",
+    "description": "Mật ong rừng nguyên chất từ các khu rừng Tây Nguyên, hương vị thơm ngọt, giàu dưỡng chất.",
+    "origin": "Đắk Nông",
+    "badge": "Tự nhiên",
+    "imageAlt": "Mật ong rừng Tây Nguyên"
   }
 ]

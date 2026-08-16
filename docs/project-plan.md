@@ -36,5 +36,4 @@
 - Người dùng có thể xem danh sách sản phẩm dễ dàng.
 - Dữ liệu sản phẩm được quản lý rõ ràng và cập nhật thuận tiện.
 
-## 7. Ghi chú
-- Dự án có thể mở rộng thêm giỏ hàng, tìm kiếm sản phẩm và thanh toán trực tuyến sau này.
+

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Danh Sách Sản Phẩm - Đặc Sản Tây Nguyên</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="logo">🌾 Đặc Sản Tây Nguyên</div>
+      <nav>
+        <ul>
+          <li><a href="../index.html">Trang Chủ</a></li>
+          <li><a href="gioi-thieu.html">Giới Thiệu</a></li>
+          <li><a href="san-pham.html">Sản Phẩm</a></li>
+          <li><a href="nguon-goc.html">Nguồn Gốc</a></li>
+          <li><a href="lien-he.html">Liên Hệ</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="banner">
+      <h1>Danh sách sản phẩm đặc sản Tây Nguyên</h1>
+      <p>Khám phá các mặt hàng đặc trưng, thơm ngon và được tin dùng trong cộng đồng.</p>
+    </div>
+
+    <div class="container section">
+      <div class="filter-box">
+        <label>Lọc theo danh mục:</label>
+        <button class="filter-btn active" data-category="all">Tất cả</button>
+        <div id="category-filters"></div>
+      </div>
+
+      <div id="error-message"></div>
+      <div id="product-list" class="product-grid"></div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container grid">
+      <div>
+        <h4>Về chúng tôi</h4>
+        <p>Website giới thiệu các đặc sản vùng Tây Nguyên với trọng tâm là chất lượng, nguồn gốc rõ ràng và hương vị nguyên bản.</p>
+      </div>
+      <div>
+        <h4>Thông tin liên hệ</h4>
+        <p>Email: contact@dacsantaynguyen.com</p>
+        <p>Điện thoại: 0123-456-789</p>
+      </div>
+      <div>
+        <h4>Thành viên nhóm</h4>
+        <ul>
+          <li>Thành viên 1: Quản lý dự án</li>
+          <li>Thành viên 2: Giao diện</li>
+          <li>Thành viên 3: Chức năng</li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    let allProducts = [];
+    let currentCategory = 'all';
+
+    function formatPrice(price) {
+      return new Intl.NumberFormat('vi-VN', {
+        style: 'currency',
+        currency: 'VND'
+      }).format(price);
+    }
+
+    function renderProducts(products) {
+      const productList = document.getElementById('product-list');
+      productList.innerHTML = '';
+
+      products.forEach(product => {
+        const card = document.createElement('a');
+        card.href = `chi-tiet-san-pham.html?id=${product.id}`;
+        card.className = 'product-card';
+        card.innerHTML = `
+          <img src="${product.image}" alt="${product.imageAlt || product.name}">
+          <div class="product-card-body">
+            <h3>${product.name}</h3>
+            <div class="meta">${product.category}</div>
+            <div class="price">${formatPrice(product.price)}</div>
+          </div>
+        `;
+        productList.appendChild(card);
+      });
+    }
+
+    function buildCategoryFilters(categories) {
+      const filtersEl = document.getElementById('category-filters');
+      const buttons = ['all', ...categories];
+
+      buttons.forEach(category => {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = `filter-btn ${category === 'all' ? 'active' : ''}`;
+        btn.dataset.category = category;
+        btn.textContent = category === 'all' ? 'Tất cả' : category;
+        btn.addEventListener('click', () => {
+          currentCategory = category;
+          document.querySelectorAll('.filter-btn').forEach(button => {
+            button.classList.toggle('active', button.dataset.category === category);
+          });
+
+          const filtered = category === 'all'
+            ? allProducts
+            : allProducts.filter(product => product.category === category);
+
+          renderProducts(filtered);
+        });
+        filtersEl.appendChild(btn);
+      });
+    }
+
+    async function loadProducts() {
+      const errorMessageEl = document.getElementById('error-message');
+      const productList = document.getElementById('product-list');
+
+      try {
+        const response = await fetch('../data/products.json');
+        if (!response.ok) {
+          throw new Error('Không thể tải dữ liệu sản phẩm, vui lòng thử lại');
+        }
+
+        allProducts = await response.json();
+        const categories = [...new Set(allProducts.map(product => product.category))];
+
+        buildCategoryFilters(categories);
+        renderProducts(allProducts.slice(0, allProducts.length));
+        errorMessageEl.innerHTML = '';
+      } catch (error) {
+        console.error('Lỗi fetch sản phẩm:', error);
+        productList.innerHTML = '';
+        errorMessageEl.innerHTML = `<div class="error">${error.message}</div>`;
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', loadProducts);
+  </script>
+</body>
+</html>
