@@ -1,13 +1,11 @@
 # Đặc Sản Tây Nguyên
 
-Website giới thiệu và trưng bày các sản phẩm đặc sản vùng Tây Nguyên — Đắk Lắk, Gia Lai, Đắk Nông, Kon Tum, Lâm Đồng. Đây là đồ án môn Thiết kế & Lập trình Web, thực hiện theo nhóm 3 người.
-
+Website giới thiệu và trưng bày các sản phẩm đặc sản vùng Tây Nguyên — Đắk Lắk, Gia Lai, Đắk Nông, Kon Tum, Lâm Đồng. 
 **Giai đoạn 1 (hiện tại)** xây dựng phần khung sườn: hiển thị thông tin sản phẩm, phân loại, nguồn gốc theo vùng, và form liên hệ tĩnh — dữ liệu đọc từ file JSON tĩnh, chưa có backend/database thật, chưa có giỏ hàng hay tài khoản người dùng (xem phạm vi chi tiết tại `docs/requirements.md` mục 8). Định hướng phát triển chức năng đặt hàng cho giai đoạn sau được trình bày riêng tại [`docs/dinh-huong-dat-hang.md`](docs/dinh-huong-dat-hang.md).
 
 ## 1. Mục tiêu dự án
 
 - Luyện kỹ năng tổ chức một dự án frontend nhiều trang có cấu trúc rõ ràng, dễ mở rộng
-- Thực hành thao tác dữ liệu bằng JavaScript thuần: `fetch()`, `Array.filter/map/find`, đọc query string trên URL
 - Thực hành quy trình làm việc nhóm chuẩn trên GitHub (branch → Pull Request → review → merge)
 
 ## 2. Tính năng chính
@@ -37,8 +35,8 @@ Website giới thiệu và trưng bày các sản phẩm đặc sản vùng Tây
 │   └── san-pham.js, chi-tiet-san-pham.js, nguon-goc.js, lien-he.js, index.js, nav.js
 ├── css/style.css      style bổ sung cho Tailwind CSS
 ├── data/products.json  dữ liệu sản phẩm (nguồn dữ liệu duy nhất, không hard-code trong HTML)
-├── assets/images/, images/   hình ảnh sản phẩm và banner
-└── docs/              tài liệu dự án (requirements, project-plan, định hướng đặt hàng, nhật ký sử dụng AI)
+├── assets/images/     hình ảnh sản phẩm
+└── docs/              tài liệu dự án (requirements, project-plan, định hướng đặt hàng, )
 ```
 
 ## 4. Công nghệ sử dụng
