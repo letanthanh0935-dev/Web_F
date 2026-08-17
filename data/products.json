@@ -1,0 +1,112 @@
+[
+  {
+    "id": 1,
+    "name": "Cà phê Buôn Ma Thuột",
+    "category": "Cà phê",
+    "origin": "Đắk Lắk",
+    "description": "Cà phê đặc sản nổi tiếng của vùng Tây Nguyên, rang xay nguyên chất 100% Robusta, hương thơm đậm đà, vị đắng nhẹ hậu ngọt.",
+    "price": 190000,
+    "unit": "kg",
+    "image": "assets/images/ca-phe-buon-ma-thuot.jpg",
+    "imageAlt": "Cà phê rang xay Buôn Ma Thuột, Đắk Lắk"
+  },
+  {
+    "id": 2,
+    "name": "Mật ong rừng Tây Nguyên",
+    "category": "Mật ong",
+    "origin": "Đắk Nông",
+    "description": "Mật ong được khai thác từ nguồn hoa tự nhiên của rừng Tây Nguyên, nguyên chất 100%, không pha tạp, giàu dưỡng chất.",
+    "price": 950000,
+    "unit": "lít",
+    "image": "assets/images/mat-ong-rung-tay-nguyen.jpg",
+    "imageAlt": "Mật ong rừng nguyên chất Tây Nguyên"
+  },
+  {
+    "id": 3,
+    "name": "Hạt điều Đắk Lắk",
+    "category": "Hạt",
+    "origin": "Đắk Lắk",
+    "description": "Hạt điều rang muối có vị béo và thơm đặc trưng, hạt to đều, giòn tan, được tuyển chọn kỹ trước khi chế biến.",
+    "price": 340000,
+    "unit": "kg",
+    "image": "assets/images/hat-dieu-dak-lak.jpg",
+    "imageAlt": "Hạt điều rang muối Đắk Lắk"
+  },
+  {
+    "id": 4,
+    "name": "Hạt tiêu Gia Lai",
+    "category": "Gia vị",
+    "origin": "Gia Lai",
+    "description": "Hạt tiêu đặc sản với hương thơm và vị cay đặc trưng, hạt chắc, được phơi sấy và làm sạch đạt chuẩn xuất khẩu.",
+    "price": 185000,
+    "unit": "kg",
+    "image": "assets/images/hat-tieu-gia-lai.jpg",
+    "imageAlt": "Hạt tiêu khô Gia Lai đóng gói"
+  },
+  {
+    "id": 5,
+    "name": "Cacao Tây Nguyên",
+    "category": "Cacao",
+    "origin": "Đắk Nông",
+    "description": "Bột cacao nguyên chất được trồng và lên men tại vùng đất Tây Nguyên, hương thơm tự nhiên, không pha trộn phụ gia.",
+    "price": 220000,
+    "unit": "kg",
+    "image": "assets/images/cacao-tay-nguyen.jpg",
+    "imageAlt": "Bột cacao nguyên chất Tây Nguyên"
+  },
+  {
+    "id": 6,
+    "name": "Trà atiso",
+    "category": "Trà",
+    "origin": "Lâm Đồng",
+    "description": "Trà atiso có hương vị thanh nhẹ, được sấy khô tự nhiên, sử dụng phổ biến để thanh nhiệt, giải độc, mát gan.",
+    "price": 230000,
+    "unit": "kg",
+    "image": "assets/images/tra-atiso.jpg",
+    "imageAlt": "Trà atiso khô Đà Lạt, Lâm Đồng"
+  },
+  {
+    "id": 7,
+    "name": "Măng khô Tây Nguyên",
+    "category": "Thực phẩm khô",
+    "origin": "Kon Tum",
+    "description": "Măng le được sơ chế và phơi khô theo phương pháp truyền thống, giữ trọn vị ngọt bùi đặc trưng của núi rừng.",
+    "price": 320000,
+    "unit": "kg",
+    "image": "assets/images/mang-kho-tay-nguyen.jpg",
+    "imageAlt": "Măng le khô Tây Nguyên, Kon Tum"
+  },
+  {
+    "id": 8,
+    "name": "Bơ Đắk Lắk",
+    "category": "Trái cây",
+    "origin": "Đắk Lắk",
+    "description": "Bơ Tây Nguyên có độ béo cao và hương vị thơm ngon, cơm vàng dẻo mịn, hạt nhỏ, chín tự nhiên tại vườn.",
+    "price": 75000,
+    "unit": "kg",
+    "image": "assets/images/bo-dak-lak.jpg",
+    "imageAlt": "Bơ sáp Đắk Lắk chín tự nhiên"
+  },
+  {
+    "id": 9,
+    "name": "Sầu riêng Đắk Lắk",
+    "category": "Trái cây",
+    "origin": "Đắk Lắk",
+    "description": "Sầu riêng Ri6 có cơm vàng, vị béo và mùi thơm đặc trưng, hạt lép, được thu hoạch đúng độ chín.",
+    "price": 89000,
+    "unit": "kg",
+    "image": "assets/images/sau-rieng-dak-lak.jpg",
+    "imageAlt": "Sầu riêng Ri6 Đắk Lắk"
+  },
+  {
+    "id": 10,
+    "name": "Rượu cần Tây Nguyên",
+    "category": "Đồ uống truyền thống",
+    "origin": "Kon Tum",
+    "description": "Rượu cần là thức uống truyền thống gắn liền với văn hóa Tây Nguyên, được ủ men lá từ gạo và trấu theo cách truyền thống.",
+    "price": 150000,
+    "unit": "lít",
+    "image": "assets/images/ruou-can-tay-nguyen.jpg",
+    "imageAlt": "Bình rượu cần truyền thống Tây Nguyên"
+  }
+]

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nguồn Gốc Sản Phẩm - Nông Sản Tây Nguyên</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="bg-slate-50 text-slate-800 font-sans flex flex-col min-h-screen">
+
+    <!-- HEADER / NAVBAR -->
+    <header class="bg-emerald-800 text-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="index.html" class="flex items-center space-x-2">
+                <i class="fa-solid font-bold text-2xl text-amber-400 fa-leaf"></i>
+                <span class="text-xl font-bold tracking-wide">Nông Sản Tây Nguyên</span>
+            </a>
+            <nav class="hidden md:flex space-x-6 font-medium">
+                <a href="index.html" class="hover:text-amber-300 transition duration-200">Trang Chủ</a>
+                <a href="gioi-thieu.html" class="hover:text-amber-300 transition duration-200">Giới Thiệu</a>
+                <a href="san-pham.html" class="hover:text-amber-300 transition duration-200">Sản Phẩm</a>
+                <a href="nguon-goc.html" class="text-amber-300">Nguồn Gốc</a>
+                <a href="lien-he.html" class="hover:text-amber-300 transition duration-200">Liên Hệ</a>
+            </nav>
+            <button id="nut-menu-mobile" class="md:hidden text-white text-2xl" aria-label="Mở menu" aria-expanded="false">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+        <nav id="menu-mobile" class="hidden md:hidden bg-emerald-900 px-4 pb-4 flex flex-col space-y-1 font-medium">
+            <a href="index.html" class="py-2 hover:text-amber-300">Trang Chủ</a>
+            <a href="gioi-thieu.html" class="py-2 hover:text-amber-300">Giới Thiệu</a>
+            <a href="san-pham.html" class="py-2 hover:text-amber-300">Sản Phẩm</a>
+            <a href="nguon-goc.html" class="py-2 text-amber-300">Nguồn Gốc</a>
+            <a href="lien-he.html" class="py-2 hover:text-amber-300">Liên Hệ</a>
+        </nav>
+    </header>
+
+    <!-- BANNER TRANG -->
+    <section class="hero-banner bg-emerald-900 text-white py-14 px-4 text-center">
+        <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight">Nguồn Gốc Sản Phẩm Theo Vùng</h1>
+        <p class="text-slate-200 mt-2">5 tỉnh Tây Nguyên - mỗi vùng một đặc sản riêng</p>
+    </section>
+
+    <main class="flex-grow py-10">
+        <div class="container mx-auto px-4 max-w-5xl">
+
+            <p id="thong-bao-loi" class="hidden text-center text-red-600 font-semibold bg-red-50 border border-red-200 rounded-lg py-4 px-4 mb-6">
+                Không thể tải dữ liệu sản phẩm, vui lòng thử lại
+            </p>
+
+            <!-- Mỗi vùng là 1 khối: giới thiệu ngắn + danh sách sản phẩm (render bằng JS từ trường "origin") -->
+            <div id="danh-sach-vung" class="space-y-8">
+                <!-- ĐẮK LẮK -->
+                <section class="bg-white rounded-xl shadow-sm border border-slate-100 p-6">
+                    <h2 class="text-xl font-bold text-emerald-900 mb-1">
+                        <i class="fa-solid fa-map-location-dot text-amber-500 mr-2"></i>Đắk Lắk
+                    </h2>
+                    <p class="text-slate-600 text-sm mb-4">
+                        "Thủ phủ cà phê" của Việt Nam, đất đỏ bazan trù phú, nổi tiếng với cà phê Buôn Ma Thuột,
+                        sầu riêng và bơ sáp thơm béo.
+                    </p>
+                    <ul data-vung="Đắk Lắk" class="list-vung grid grid-cols-1 sm:grid-cols-2 gap-2"></ul>
+                </section>
+
+                <!-- GIA LAI -->
+                <section class="bg-white rounded-xl shadow-sm border border-slate-100 p-6">
+                    <h2 class="text-xl font-bold text-emerald-900 mb-1">
+                        <i class="fa-solid fa-map-location-dot text-amber-500 mr-2"></i>Gia Lai
+                    </h2>
+                    <p class="text-slate-600 text-sm mb-4">
+                        Vùng cao nguyên đất đỏ nắng gió, thế mạnh về hồ tiêu và các loại nông sản chế biến đạt chuẩn
+                        xuất khẩu.
+                    </p>
+                    <ul data-vung="Gia Lai" class="list-vung grid grid-cols-1 sm:grid-cols-2 gap-2"></ul>
+                </section>
+
+                <!-- ĐẮK NÔNG -->
+                <section class="bg-white rounded-xl shadow-sm border border-slate-100 p-6">
+                    <h2 class="text-xl font-bold text-emerald-900 mb-1">
+                        <i class="fa-solid fa-map-location-dot text-amber-500 mr-2"></i>Đắk Nông
+                    </h2>
+                    <p class="text-slate-600 text-sm mb-4">
+                        Rừng nguyên sinh còn nhiều, cho ra mật ong rừng nguyên chất và cacao lên men tự nhiên chất
+                        lượng cao.
+                    </p>
+                    <ul data-vung="Đắk Nông" class="list-vung grid grid-cols-1 sm:grid-cols-2 gap-2"></ul>
+                </section>
+
+                <!-- KON TUM -->
+                <section class="bg-white rounded-xl shadow-sm border border-slate-100 p-6">
+                    <h2 class="text-xl font-bold text-emerald-900 mb-1">
+                        <i class="fa-solid fa-map-location-dot text-amber-500 mr-2"></i>Kon Tum
+                    </h2>
+                    <p class="text-slate-600 text-sm mb-4">
+                        Núi rừng đại ngàn, quê hương của măng khô rừng và rượu cần - thức uống truyền thống gắn liền
+                        với văn hoá bản địa.
+                    </p>
+                    <ul data-vung="Kon Tum" class="list-vung grid grid-cols-1 sm:grid-cols-2 gap-2"></ul>
+                </section>
+
+                <!-- LÂM ĐỒNG -->
+                <section class="bg-white rounded-xl shadow-sm border border-slate-100 p-6">
+                    <h2 class="text-xl font-bold text-emerald-900 mb-1">
+                        <i class="fa-solid fa-map-location-dot text-amber-500 mr-2"></i>Lâm Đồng
+                    </h2>
+                    <p class="text-slate-600 text-sm mb-4">
+                        Khí hậu ôn đới mát mẻ quanh năm (Đà Lạt), thích hợp trồng atiso và nhiều loại rau, hoa, trà
+                        dược liệu.
+                    </p>
+                    <ul data-vung="Lâm Đồng" class="list-vung grid grid-cols-1 sm:grid-cols-2 gap-2"></ul>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-900 text-slate-400 py-10 mt-auto">
+        <div class="container mx-auto px-4 max-w-6xl grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+                <h3 class="text-white text-lg font-bold mb-3 flex items-center">
+                    <i class="fa-solid fa-leaf text-amber-400 mr-2"></i> ĐẶC SẢN TÂY NGUYÊN
+                </h3>
+                <p class="text-sm leading-relaxed">
+                    Dự án quảng bá thương hiệu nông sản Đắk Lắk & các tỉnh Tây Nguyên. Cam kết chất lượng và xuất xứ
+                    chính gốc.
+                </p>
+            </div>
+            <div>
+                <h4 class="text-white text-md font-semibold mb-3">Liên Hệ Nhà Vườn</h4>
+                <ul class="text-sm space-y-2">
+                    <li><i class="fa-solid fa-location-dot mr-2 text-amber-400"></i> TP. Buôn Ma Thuột, Tỉnh Đắk Lắk
+                    </li>
+                    <li><i class="fa-solid fa-phone mr-2 text-amber-400"></i> Hotline: 0987 654 321</li>
+                    <li><i class="fa-solid fa-envelope mr-2 text-amber-400"></i> taynguyenproducts@gmail.com</li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white text-md font-semibold mb-3">Liên Kết Nhanh</h4>
+                <div class="flex flex-col space-y-2 text-sm">
+                    <a href="index.html" class="hover:text-white">Trang chủ</a>
+                    <a href="san-pham.html" class="hover:text-white">Danh sách sản phẩm</a>
+                    <a href="lien-he.html" class="hover:text-white">Liên hệ hợp tác</a>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-slate-800 mt-8 pt-4 text-center text-xs text-slate-500">
+            &copy; 2026 Đặc sản Tây Nguyên.
+        </div>
+    </footer>
+
+    <script src="../js/man.js"></script>
+    <script src="../js/nav.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="../js/nguon-goc.js"></script>
+</body>
+
+</html>
